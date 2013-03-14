@@ -3,6 +3,26 @@ F109
 
 Formula One 2009 Widget set for rfdynhud
 
+
+Release date: September 22, 2011
+
+Version: 0.8.0.0
+
+Author: Prunn
+
+Email: prunn69@gmail.com
+
+Website: http://prunn.wordpress.com
+
+
+*CREDITS*
+-
+
+-Prunn
+
+-CTDP/Marvin
+
+
 *License*
 -
 
