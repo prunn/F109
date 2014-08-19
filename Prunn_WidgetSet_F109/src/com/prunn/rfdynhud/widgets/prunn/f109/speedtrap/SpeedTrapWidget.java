@@ -88,7 +88,7 @@ public class SpeedTrapWidget extends Widget
     @Override
     public void onRealtimeEntered( LiveGameData gameData, boolean isEditorMode )
     {
-        super.onRealtimeEntered( gameData, isEditorMode );
+        super.onCockpitEntered( gameData, isEditorMode );
         
     }
     

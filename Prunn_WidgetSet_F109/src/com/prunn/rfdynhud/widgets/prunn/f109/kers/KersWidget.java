@@ -113,7 +113,7 @@ public class KersWidget extends Widget
     @Override
     public void onRealtimeEntered( LiveGameData gameData, boolean isEditorMode )
     {
-        super.onRealtimeEntered( gameData, isEditorMode );
+        super.onCockpitEntered( gameData, isEditorMode );
         
     }
     private void drawBarLabel(String label, TextureImage2D texture, int offsetX, int offsetY, int width, int height)

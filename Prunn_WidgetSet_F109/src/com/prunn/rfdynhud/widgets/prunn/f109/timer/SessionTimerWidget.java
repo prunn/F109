@@ -103,7 +103,7 @@ public class SessionTimerWidget extends Widget
     	sectorYellowFlag.reset();
     	SCState.reset();
         gamePhase.reset();
-        super.onRealtimeEntered( gameData, isEditorMode );
+        super.onCockpitEntered( gameData, isEditorMode );
         
     }
     public void onSessionStarted(SessionType sessionType, LiveGameData gameData, boolean isEditorMode)

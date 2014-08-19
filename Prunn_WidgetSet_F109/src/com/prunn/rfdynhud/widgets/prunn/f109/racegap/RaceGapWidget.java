@@ -99,7 +99,7 @@ public class RaceGapWidget extends Widget
     @Override
     public void onRealtimeEntered( LiveGameData gameData, boolean isEditorMode )
     {
-        super.onRealtimeEntered( gameData, isEditorMode );
+        super.onCockpitEntered( gameData, isEditorMode );
         //visibleEnd = 0x8000000000000000L;
     }
     private static final String getTimeAsGapString2( float gap )

@@ -76,7 +76,7 @@ public class TrackTempsWidget extends Widget
     @Override
     public void onRealtimeEntered( LiveGameData gameData, boolean isEditorMode )
     {
-        super.onRealtimeEntered( gameData, isEditorMode );
+        super.onCockpitEntered( gameData, isEditorMode );
         
     }
     
@@ -121,8 +121,8 @@ public class TrackTempsWidget extends Widget
     protected void drawWidget( Clock clock, boolean needsCompleteRedraw, LiveGameData gameData, boolean isEditorMode, TextureImage2D texture, int offsetX, int offsetY, int width, int height )
     {
         
-        AmbientTemp.update((int)Math.floor(gameData.getScoringInfo().getAmbientTemperature()));
-        TrackTemp.update((int)Math.floor(gameData.getScoringInfo().getTrackTemperature()));
+        AmbientTemp.update((int)Math.floor(gameData.getWeatherInfo().getAmbientTemperature()));
+        TrackTemp.update((int)Math.floor(gameData.getWeatherInfo().getTrackTemperature()));
         
         if ( needsCompleteRedraw || AmbientTemp.hasChanged())
         {
