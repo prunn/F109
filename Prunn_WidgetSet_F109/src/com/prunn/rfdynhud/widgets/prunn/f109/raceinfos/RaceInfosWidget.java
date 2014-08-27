@@ -3,7 +3,6 @@ package com.prunn.rfdynhud.widgets.prunn.f109.raceinfos;
 import java.awt.Font;
 import java.io.IOException;
 
-import com.prunn.rfdynhud.plugins.tlcgenerator.StandardTLCGenerator;
 import com.prunn.rfdynhud.widgets.prunn._util.PrunnWidgetSetF109;
 
 import net.ctdp.rfdynhud.gamedata.Laptime;
@@ -95,7 +94,6 @@ public class RaceInfosWidget extends Widget
     
     private int widgetpart = 0;//0-info 1-pitstop 2-fastestlap 3-winner
     private final FloatValue FastestLapTime = new FloatValue(-1F, 0.001F);
-    StandardTLCGenerator gen = new StandardTLCGenerator();
     
     public String getDefaultNamedColorValue(String name)
     {
@@ -125,7 +123,7 @@ public class RaceInfosWidget extends Widget
     
     
     @Override
-    public void onRealtimeEntered( LiveGameData gameData, boolean isEditorMode )
+    public void onCockpitEntered( LiveGameData gameData, boolean isEditorMode )
     {
         super.onCockpitEntered( gameData, isEditorMode );
         
@@ -369,7 +367,7 @@ public class RaceInfosWidget extends Widget
                         
                         if(fastcarinfos.getVehicleInfo() != null)
                         {
-                            team = gen.generateShortTeamNames( fastcarinfos.getVehicleInfo().getTeamName(), gameData.getFileSystem().getConfigFolder() );
+                            team = PrunnWidgetSetF109.generateShortTeamNames( fastcarinfos.getVehicleInfo().getTeamName(), gameData.getFileSystem().getConfigFolder() );
                             //number = NumberUtil.formatFloat( fastcarinfos.getVehicleInfo().getCarNumber(), 0, true);
                         }
                         else
@@ -391,7 +389,7 @@ public class RaceInfosWidget extends Widget
                         
                         if(winnercarinfos.getVehicleInfo() != null)
                         {
-                            team = gen.generateShortTeamNames( winnercarinfos.getVehicleInfo().getTeamName(), gameData.getFileSystem().getConfigFolder() );
+                            team = PrunnWidgetSetF109.generateShortTeamNames( winnercarinfos.getVehicleInfo().getTeamName(), gameData.getFileSystem().getConfigFolder() );
                             //number = NumberUtil.formatFloat( winnercarinfos.getVehicleInfo().getCarNumber(), 0, true);
                         }
                         else
@@ -423,7 +421,7 @@ public class RaceInfosWidget extends Widget
                         VehicleScoringInfo currentcarinfosInfo = gameData.getScoringInfo().getViewedVehicleScoringInfo();
                         
                         if(currentcarinfosInfo.getVehicleInfo() != null)
-                            team = gen.generateShortTeamNames( currentcarinfosInfo.getVehicleInfo().getTeamName(), gameData.getFileSystem().getConfigFolder() );
+                            team = PrunnWidgetSetF109.generateShortTeamNames( currentcarinfosInfo.getVehicleInfo().getTeamName(), gameData.getFileSystem().getConfigFolder() );
                           
                         else
                             team = currentcarinfosInfo.getVehicleClass(); 

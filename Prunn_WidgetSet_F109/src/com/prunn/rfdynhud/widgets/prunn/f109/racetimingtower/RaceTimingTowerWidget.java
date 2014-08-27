@@ -3,8 +3,6 @@ package com.prunn.rfdynhud.widgets.prunn.f109.racetimingtower;
 import java.awt.Color;
 import java.awt.Font;
 import java.io.IOException;
-
-import com.prunn.rfdynhud.plugins.tlcgenerator.StandardTLCGenerator;
 import net.ctdp.rfdynhud.gamedata.GamePhase;
 import net.ctdp.rfdynhud.gamedata.LiveGameData;
 import net.ctdp.rfdynhud.gamedata.ScoringInfo;
@@ -67,14 +65,10 @@ public class RaceTimingTowerWidget extends Widget
     private short[] gainedPlaces = null;
     private String[] names = null;
     private String[] gaps = null;
-    StandardTLCGenerator gen = new StandardTLCGenerator();
-    
-    
-    
     
     
     @Override
-    public void onRealtimeEntered( LiveGameData gameData, boolean isEditorMode )
+    public void onCockpitEntered( LiveGameData gameData, boolean isEditorMode )
     {
         super.onCockpitEntered( gameData, isEditorMode );
         
@@ -158,7 +152,7 @@ public class RaceTimingTowerWidget extends Widget
             
                 VehicleScoringInfo vsi = scoringInfo.getVehicleScoringInfo( i );
                 positions[i] = vsi.getPlace( false );
-                names[i] = gen.generateThreeLetterCode( vsi.getDriverName() );
+                names[i] = PrunnWidgetSetF109.generateThreeLetterCode( vsi.getDriverName() );
                 //names[i] = vsi.getDriverNameTLC( true );
                 
                 switch(data) //0-2-4-gaps 1-place gained 5-pitstop

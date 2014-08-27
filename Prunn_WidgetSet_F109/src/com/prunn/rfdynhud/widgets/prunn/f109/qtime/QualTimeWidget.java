@@ -100,19 +100,9 @@ public class QualTimeWidget extends Widget
     {
         return isvisible;
     }
-    /*@Override
-    public String getDefaultNamedColorValue( String name )
-    {
-        if(name.equals("KnockoutFontColor"))
-            return "#DA1C19";
-        
-        return ( PrunnWidgetSetPro.getDefaultNamedColorValue( name ) );
-    }*/
-    
-    
-    
+   
     @Override
-    public void onRealtimeEntered( LiveGameData gameData, boolean isEditorMode )
+    public void onCockpitEntered( LiveGameData gameData, boolean isEditorMode )
     {
         super.onCockpitEntered( gameData, isEditorMode );
         

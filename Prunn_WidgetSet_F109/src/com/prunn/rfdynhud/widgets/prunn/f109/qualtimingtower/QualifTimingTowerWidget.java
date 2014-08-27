@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.io.IOException;
 
-import com.prunn.rfdynhud.plugins.tlcgenerator.StandardTLCGenerator;
 import net.ctdp.rfdynhud.gamedata.LiveGameData;
 import net.ctdp.rfdynhud.gamedata.ScoringInfo;
 import net.ctdp.rfdynhud.gamedata.VehicleScoringInfo;
@@ -76,11 +75,10 @@ public class QualifTimingTowerWidget extends Widget
     private boolean[] gapFlag = null;
     private boolean[] gapFlag2 = null;
     private final IntValue numValid = new IntValue();
-    StandardTLCGenerator gen = new StandardTLCGenerator();
     
     
     @Override
-    public void onRealtimeEntered( LiveGameData gameData, boolean isEditorMode )
+    public void onCockpitEntered( LiveGameData gameData, boolean isEditorMode )
     {
         super.onCockpitEntered( gameData, isEditorMode );
         visibleEnd = -1L;
@@ -222,7 +220,7 @@ public class QualifTimingTowerWidget extends Widget
             {
 
                 positions[i].update( vsi.getPlace( false ) );
-                driverNames[i].update(gen.generateThreeLetterCode( vsi.getDriverName() ));
+                driverNames[i].update(PrunnWidgetSetF109.generateThreeLetterCode( vsi.getDriverName() ));
                 //logCS( vsi.getDriverName(), driverNames[i].getValue() );
                 //driverNames[i].update(vsi.getDriverNameTLC( true ));
                 gaps[i].setUnchanged();

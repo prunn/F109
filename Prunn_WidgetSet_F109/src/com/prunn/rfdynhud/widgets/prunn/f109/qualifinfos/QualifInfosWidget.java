@@ -3,7 +3,6 @@ package com.prunn.rfdynhud.widgets.prunn.f109.qualifinfos;
 import java.awt.Font;
 import java.io.IOException;
 
-import com.prunn.rfdynhud.plugins.tlcgenerator.StandardTLCGenerator;
 import com.prunn.rfdynhud.widgets.prunn._util.PrunnWidgetSetF109;
 import com.prunn.rfdynhud.widgets.prunn.f109.qtime.QualTimeWidget;
 
@@ -68,7 +67,6 @@ public class QualifInfosWidget extends Widget
     private final DelayProperty visibleTime;
     private long visibleEnd;
     private IntValue cveh = new IntValue();
-    StandardTLCGenerator gen = new StandardTLCGenerator();
     
     @Override
     public String getDefaultNamedColorValue(String name)
@@ -100,7 +98,7 @@ public class QualifInfosWidget extends Widget
     
     
     @Override
-    public void onRealtimeEntered( LiveGameData gameData, boolean isEditorMode )
+    public void onCockpitEntered( LiveGameData gameData, boolean isEditorMode )
     {
         super.onCockpitEntered( gameData, isEditorMode );
         
@@ -230,7 +228,7 @@ public class QualifInfosWidget extends Widget
             
             if(currentcarinfos.getVehicleInfo() != null)
             {
-                team = gen.generateShortTeamNames( currentcarinfos.getVehicleInfo().getTeamName(), gameData.getFileSystem().getConfigFolder() );
+                team = PrunnWidgetSetF109.generateShortTeamNames( currentcarinfos.getVehicleInfo().getTeamName(), gameData.getFileSystem().getConfigFolder() );
             }
             else
             {

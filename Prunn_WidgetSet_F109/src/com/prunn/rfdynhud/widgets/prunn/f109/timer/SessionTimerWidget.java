@@ -97,7 +97,7 @@ public class SessionTimerWidget extends Widget
     }
     
     @Override
-    public void onRealtimeEntered( LiveGameData gameData, boolean isEditorMode )
+    public void onCockpitEntered( LiveGameData gameData, boolean isEditorMode )
     {
         LapsLeft.reset();
     	sectorYellowFlag.reset();
